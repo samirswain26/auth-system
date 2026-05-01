@@ -21,10 +21,30 @@ const activity = [
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const handleLogout = () => {
-    // Clear cookies/localStorage and redirect
+const handleLogout = async () => {
+  try {
+    const res = await fetch("/api/auth/signout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include", // sends cookies (important for JWT/session cookies)
+    });
+
+    if (!res.ok) {
+      console.error("Signout failed:", await res.text());
+    }
+  } catch (error) {
+    console.error("Signout request error:", error);
+  } finally {
+    // Always clear client-side state regardless of server response
+    localStorage.clear();
+    sessionStorage.clear();
+
+    // If you're storing the token in a cookie manually, clear it too
+    document.cookie = "token=; Max-Age=0; path=/;";
+
     window.location.href = "/";
-  };
+  }
+};
 
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white flex">
@@ -37,7 +57,7 @@ export default function Dashboard() {
         {/* Logo */}
         <div className="p-6 border-b border-white/5">
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/30">
+            <div className="w-9 h-9 rounded-xl bg-linear-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/30">
               <svg className="w-4 h-4 text-[#0a0a0f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" />
               </svg>
@@ -84,7 +104,7 @@ export default function Dashboard() {
         {/* User + Logout */}
         <div className="p-4 border-t border-white/5">
           <div className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white/3 mb-2">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-[#0a0a0f] font-bold text-sm">
+            <div className="w-8 h-8 rounded-full bg-linear-to-br from-amber-400 to-amber-600 flex items-center justify-center text-[#0a0a0f] font-bold text-sm">
               J
             </div>
             <div className="flex-1 min-w-0">
@@ -197,7 +217,7 @@ export default function Dashboard() {
             {/* Security Panel */}
             <div className="lg:col-span-2 space-y-4">
               {/* Security score */}
-              <div className="rounded-2xl border border-amber-400/20 bg-gradient-to-br from-amber-400/8 to-amber-600/3 p-6">
+              <div className="rounded-2xl border border-amber-400/20 bg-linear-to-br from-amber-400/8 to-amber-600/3 p-6">
                 <h3 className="text-white font-semibold mb-1" style={{ fontFamily: "Georgia, serif" }}>Security Score</h3>
                 <p className="text-slate-400 text-xs mb-4">Your account is well-protected</p>
                 <div className="flex items-end gap-3 mb-4">
@@ -205,7 +225,7 @@ export default function Dashboard() {
                   <span className="text-slate-500 text-sm mb-1">/100</span>
                 </div>
                 <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                  <div className="h-full w-[98%] bg-gradient-to-r from-amber-400 to-amber-300 rounded-full" />
+                  <div className="h-full w-[98%] bg-linear-to-r from-amber-400 to-amber-300 rounded-full" />
                 </div>
               </div>
 
