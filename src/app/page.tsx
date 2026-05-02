@@ -7,9 +7,9 @@ export default function Home() {
     <div className="min-h-screen bg-[#0a0a0f] text-white overflow-hidden relative flex flex-col items-center justify-center px-4">
       {/* Ambient background blobs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-amber-500/10 blur-[120px] animate-pulse" />
-        <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-indigo-500/10 blur-[120px] animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[2px] bg-gradient-to-r from-transparent via-amber-400/20 to-transparent" />
+        <div className="absolute -top-40 -left-40 w-150 h-150 rounded-full bg-amber-500/10 blur-[120px] animate-pulse" />
+        <div className="absolute -bottom-40 -right-40 w-125 h-125 rounded-full bg-indigo-500/10 blur-[120px] animate-pulse delay-1000" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-0.5 bg-linear-to-r from-transparent via-amber-400/20 to-transparent" />
       </div>
 
       {/* Subtle grid overlay */}
@@ -26,7 +26,7 @@ export default function Home() {
       <div className="relative z-10 flex flex-col items-center text-center mb-16 animate-fade-in">
         {/* Icon mark */}
         <div className="mb-6 relative">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/30">
+          <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/30">
             <svg
               className="w-8 h-8 text-[#0a0a0f]"
               fill="none"
@@ -49,7 +49,7 @@ export default function Home() {
           style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
         >
           Auth
-          <span className="bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">
             System
           </span>
         </h1>
@@ -86,13 +86,13 @@ export default function Home() {
             <p className="font-semibold text-white text-base">Sign In</p>
             <p className="text-slate-400 text-sm mt-0.5">Welcome back</p>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-amber-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-amber-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </Link>
 
         {/* Signup Card */}
         <Link
           href="/signup"
-          className="group flex-1 relative overflow-hidden rounded-2xl border border-amber-400/30 bg-gradient-to-br from-amber-400/15 to-amber-600/5 backdrop-blur-md p-6 flex flex-col items-center gap-3 transition-all duration-300 hover:border-amber-400/60 hover:shadow-xl hover:shadow-amber-500/20 hover:-translate-y-1"
+          className="group flex-1 relative overflow-hidden rounded-2xl border border-amber-400/30 bg-linear-to-br from-amber-400/15 to-amber-600/5 backdrop-blur-md p-6 flex flex-col items-center gap-3 transition-all duration-300 hover:border-amber-400/60 hover:shadow-xl hover:shadow-amber-500/20 hover:-translate-y-1"
         >
           <div className="w-12 h-12 rounded-xl bg-amber-400/20 border border-amber-400/30 flex items-center justify-center group-hover:bg-amber-400/30 transition-colors duration-300">
             <svg
@@ -113,7 +113,7 @@ export default function Home() {
             <p className="font-semibold text-white text-base">Create Account</p>
             <p className="text-slate-400 text-sm mt-0.5">Get started free</p>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-linear-to-br from-amber-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </Link>
       </div>
 

@@ -117,7 +117,7 @@ export default function Signup() {
                     </div>
                     <input
                       type="text"
-                      placeholder="John Doe"
+                      placeholder="Samir Kumar Swain"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       className="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3.5 text-white placeholder:text-slate-600 text-sm outline-none transition-all duration-200 focus:border-amber-400/50 focus:bg-white/8 focus:shadow-[0_0_0_3px_rgba(251,191,36,0.07)]"
