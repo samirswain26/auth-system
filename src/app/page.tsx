@@ -91,7 +91,7 @@ export default function Home() {
 
         {/* Signup Card */}
         <Link
-          href="/sign-in"
+          href="/signup"
           className="group flex-1 relative overflow-hidden rounded-2xl border border-amber-400/30 bg-gradient-to-br from-amber-400/15 to-amber-600/5 backdrop-blur-md p-6 flex flex-col items-center gap-3 transition-all duration-300 hover:border-amber-400/60 hover:shadow-xl hover:shadow-amber-500/20 hover:-translate-y-1"
         >
           <div className="w-12 h-12 rounded-xl bg-amber-400/20 border border-amber-400/30 flex items-center justify-center group-hover:bg-amber-400/30 transition-colors duration-300">
