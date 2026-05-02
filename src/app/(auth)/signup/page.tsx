@@ -61,7 +61,7 @@ export default function Signup() {
       <div className="flex-1 flex flex-col items-center justify-center px-6 py-12 relative">
         {/* Mobile logo */}
         <div className="lg:hidden flex items-center gap-3 mb-10">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/30">
+          <div className="w-9 h-9 rounded-xl bg-linear-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/30">
             <svg className="w-4 h-4 text-[#0a0a0f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" />
             </svg>
@@ -220,7 +220,7 @@ export default function Signup() {
                 <button
                   onClick={handleSubmit}
                   disabled={loading}
-                  className="relative w-full mt-1 overflow-hidden rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 px-6 py-3.5 text-sm font-semibold text-[#0a0a0f] transition-all duration-200 hover:from-amber-300 hover:to-amber-400 hover:shadow-lg hover:shadow-amber-500/30 disabled:opacity-60 disabled:cursor-not-allowed active:scale-[0.98]"
+                  className="relative w-full mt-1 overflow-hidden rounded-xl bg-linear-to-r from-amber-400 to-amber-500 px-6 py-3.5 text-sm font-semibold text-[#0a0a0f] transition-all duration-200 hover:from-amber-300 hover:to-amber-400 hover:shadow-lg hover:shadow-amber-500/30 disabled:opacity-60 disabled:cursor-not-allowed active:scale-[0.98]"
                 >
                   {loading ? (
                     <span className="flex items-center justify-center gap-2">
@@ -265,8 +265,8 @@ export default function Signup() {
 
       {/* Right Panel — Decorative */}
       <div className="hidden lg:flex flex-col justify-between w-[45%] relative overflow-hidden bg-[#0d0d15] border-l border-white/5 p-12">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-amber-500/8 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-500/6 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-0 left-0 w-125 h-125 bg-amber-500/8 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-100 h-100 bg-indigo-500/6 rounded-full blur-[100px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.025]"
           style={{
@@ -278,7 +278,7 @@ export default function Signup() {
 
         {/* Logo */}
         <div className="relative z-10 flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/30">
+          <div className="w-9 h-9 rounded-xl bg-linear-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/30">
             <svg className="w-4 h-4 text-[#0a0a0f]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" />
             </svg>
@@ -290,7 +290,7 @@ export default function Signup() {
 
         {/* Features list */}
         <div className="relative z-10 space-y-5">
-          <div className="w-10 h-[3px] bg-amber-400 rounded-full mb-8" />
+          <div className="w-10 h-0.75 bg-amber-400 rounded-full mb-8" />
           {[
             { icon: "🔒", title: "Bank-grade security", desc: "AES-256 encryption for all your data" },
             { icon: "⚡", title: "Instant access", desc: "Authenticate in under 50ms globally" },
